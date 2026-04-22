@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SK China · Beijing AI Training — 수강생 대시보드</title>
+  <meta name="description" content="SK China 베이징 AI 활용 교육(2026-04-28) 수강생 대시보드. 한·중 프롬프트 비교, 실습 CSV 다운로드, 체크리스트." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;600&display=swap"
+  />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+
+  <!-- ========== NAV ========== -->
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top">
+        <span class="nav__brand-mark">SK</span>
+        <span class="nav__brand-text">China · AI Training</span>
+      </a>
+      <nav class="nav__list" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#part1">Part 1</a>
+        <a href="#part2">Part 2</a>
+        <a href="#part3">Part 3</a>
+        <a href="#part4">Part 4</a>
+        <a href="#closing">Closing</a>
+        <a href="#data">Data</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="hero__inner">
+        <p class="hero__eyebrow">Beijing · 2026.04.28 · 3h</p>
+        <h1 class="hero__title">
+          실무로 바로 쓰는 <em>AI 활용</em>
+          <span class="hero__title-zh">一门能立刻上手的 AI 实战课</span>
+        </h1>
+        <p class="hero__lead">
+          데이터 분석, 리서치, 문서 제작 — AI와 함께 일하는 사람의 하루를
+          네 챕터로 설계했습니다.
+        </p>
+
+        <dl class="hero__meta">
+          <div><dt>일시</dt><dd>2026-04-28 · 09:30–12:30</dd></div>
+          <div><dt>장소</dt><dd>SK China 베이징 오피스</dd></div>
+          <div><dt>강사</dt><dd>Aram Kim (김아람 이사)</dd></div>
+          <div><dt>구성</dt><dd>Part 1–4 · 실습 프롬프트 12개</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ========== OVERVIEW ========== -->
+    <section id="overview" class="section">
+      <div class="section__inner">
+        <p class="section__eyebrow">Overview</p>
+        <h2 class="section__title">
+          오늘의 흐름
+          <span class="section__title-zh">今日流程</span>
+        </h2>
+        <p class="section__lead">
+          하나의 만족도 설문 데이터를 가지고, 분석 → 리서치 → 기획 → 슬라이드까지
+          이어지는 실제 업무 시퀀스를 체험합니다.
+        </p>
+
+        <ol class="pipeline">
+          <li>
+            <span class="pipeline__step">01</span>
+            <h3>데이터</h3>
+            <p>만족도 설문 CSV<br/>50행 × 12열</p>
+          </li>
+          <li>
+            <span class="pipeline__step">02</span>
+            <h3>분석</h3>
+            <p>클리닝 · 집계<br/>정성 분류</p>
+          </li>
+          <li>
+            <span class="pipeline__step">03</span>
+            <h3>리서치</h3>
+            <p>외부 사례 확인<br/>출처 검증</p>
+          </li>
+          <li>
+            <span class="pipeline__step">04</span>
+            <h3>기획</h3>
+            <p>슬라이드 구조<br/>메시지 설계</p>
+          </li>
+          <li>
+            <span class="pipeline__step">05</span>
+            <h3>제작</h3>
+            <p>Kimi로 초안<br/>사람이 마감</p>
+          </li>
+        </ol>
+
+        <p class="callout callout--muted" style="margin-top:2.4rem;">
+          <em>도구 스택</em> —
+          <strong>Part 2–3:</strong> DeepSeek + Qwen (교차 검증) ·
+          <strong>Part 4:</strong> Kimi K2.6 + PowerPoint.
+          중국 내부망에서 안정적으로 접속 가능한 도구로만 구성했습니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== PART 1 ========== -->
+    <section id="part1" class="section section--alt">
+      <div class="section__inner">
+        <p class="section__eyebrow">Part 1 · 40min</p>
+        <h2 class="section__title">
+          AI 프롬프트 기초
+          <span class="section__title-zh">AI 提示词基础</span>
+        </h2>
+        <p class="section__lead">
+          질문이 바뀌면 답이 바뀝니다. 업무에서 재현 가능한 답을 얻기 위한
+          네 가지 기준을 먼저 익힙니다.
+        </p>
+
+        <div class="principles">
+          <article>
+            <span class="principles__no">01</span>
+            <h3>역할 부여</h3>
+            <p>AI에게 어떤 자격으로 답할지 지정합니다. "데이터 분석가로서"처럼 한 줄이면 충분합니다.</p>
+          </article>
+          <article>
+            <span class="principles__no">02</span>
+            <h3>맥락 제공</h3>
+            <p>업무 배경 · 사용 환경 · 청중 · 제약을 2~3문장으로 압축해 함께 전달합니다.</p>
+          </article>
+          <article>
+            <span class="principles__no">03</span>
+            <h3>단계별 지시</h3>
+            <p>한 번에 다 시키지 말고 1·2·3으로 쪼개 분량·형식·톤을 숫자와 명사로 못 박습니다.</p>
+          </article>
+          <article>
+            <span class="principles__no">04</span>
+            <h3>출력 형식</h3>
+            <p>표·체크리스트·마크다운 같은 구체적 포맷을 지정합니다. "확신이 낮은 부분은 표시해 달라"도 같이.</p>
+          </article>
+        </div>
+
+        <h3 class="subsection__title">마크다운 빠른 참조 · 실습 프롬프트</h3>
+        <p class="subsection__lead">
+          카드 안의 <strong>한국어 / 中文</strong> 탭을 눌러 원하는 언어를 복사하세요.
+          상단의 "한·중 비교" 버튼으로 두 언어를 나란히 볼 수도 있습니다.
+        </p>
+
+        <div class="view-toggle" role="group" aria-label="View mode">
+          <button class="is-active" data-view="tabs" type="button">탭 보기</button>
+          <button data-view="compare" type="button">한·중 비교</button>
+        </div>
+
+        <div data-prompts="part1" class="prompts"></div>
+
+        <h3 class="subsection__title">할루시네이션 · 3유형</h3>
+        <p class="subsection__lead">
+          AI는 "가장 그럴듯한 다음 단어"를 예측할 뿐입니다. 재현 가능한 사실과
+          재현 불가능한 추정이 같은 문장 안에 섞여 나오는 구조를 먼저 이해합니다.
+        </p>
+
+        <div class="halluc">
+          <article>
+            <span class="halluc__tag">① 사실 왜곡</span>
+            <h4>틀린 사실을 그럴듯하게</h4>
+            <p>숫자·연도·조직명이 실제와 다르게 생성됩니다. 1차 자료로 재확인해야만 걸러낼 수 있습니다.</p>
+          </article>
+          <article>
+            <span class="halluc__tag">② 출처 조작</span>
+            <h4>존재하지 않는 인용</h4>
+            <p>논문 제목·URL·저자가 그럴듯하게 조합돼 튀어나옵니다. 링크를 직접 열어본 뒤에만 믿습니다.</p>
+          </article>
+          <article>
+            <span class="halluc__tag">③ 수치 왜곡</span>
+            <h4>반올림·재해석</h4>
+            <p>평균을 임의로 반올림하거나, 원본에 없는 비율을 만들어냅니다. 엑셀로 역검산합니다.</p>
+          </article>
+        </div>
+
+        <h3 class="subsection__title">할루시네이션을 줄이는 3원칙</h3>
+        <ul class="checklist">
+          <li><em>제약조건 명시</em> — "추측이면 '추정' 표시", "모르면 '모름'이라고 답하기"를 프롬프트에 못 박는다.</li>
+          <li><em>출처 강제</em> — 숫자·고유명사·인용엔 반드시 URL이나 원문 문장을 같이 달게 한다.</li>
+          <li><em>반증 요청</em> — "반대 사례는 없는가?"를 추가 프롬프트로 던져 한쪽으로 치우친 답을 교정한다.</li>
+        </ul>
+
+        <div class="callout">
+          <h4>예외 · 브레인스토밍</h4>
+          <p>
+            아이디어 발산 단계에서는 세 원칙을 잠시 꺼두어도 좋습니다.
+            할루시네이션은 <strong>검증이 필요한 결과물</strong>에서만 문제입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PART 2 ========== -->
+    <section id="part2" class="section">
+      <div class="section__inner">
+        <p class="section__eyebrow">Part 2 · 60min</p>
+        <h2 class="section__title">
+          데이터 분석
+          <span class="section__title-zh">数据分析</span>
+        </h2>
+        <p class="section__lead">
+          직전 분기 AI 교육 만족도 조사 데이터(가상)를 가지고
+          <strong>구조 파악 → 기술통계 → 세그먼트 → 정성 분류</strong>의 4단계를 실습합니다.
+        </p>
+
+        <div class="data-spec">
+          <div class="data-spec__meta">
+            <h3>실습 데이터 구조</h3>
+            <p>50행 × 12열 · UTF-8 BOM · KR/CN 두 버전</p>
+          </div>
+          <table class="data-spec__table">
+            <thead>
+              <tr><th>#</th><th>컬럼</th><th>유형</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>응답자ID</td><td>식별자</td></tr>
+              <tr><td>2</td><td>부서</td><td>카테고리 (6)</td></tr>
+              <tr><td>3</td><td>직급</td><td>팀장 / 임원</td></tr>
+              <tr><td>4</td><td>교육일자</td><td>날짜</td></tr>
+              <tr><td>5–9</td><td>5개 만족도 지표</td><td>5점 척도</td></tr>
+              <tr><td>10–12</td><td>좋았던 점 · 개선점 · 희망 주제</td><td>자유 텍스트</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="callout callout--muted">
+          데이터에는 의도적으로 <em>결함 4종</em>이 심겨 있습니다 — 중복 ID 1건,
+          날짜 결측 1건, 자유 텍스트 결측 3건, 척도 이상값 1건.
+          먼저 AI에게 신고하게 한 뒤, 엑셀로 교차 검증하세요.
+        </p>
+
+        <h3 class="subsection__title">실습 프롬프트 · #1 – #4</h3>
+
+        <div class="view-toggle" role="group" aria-label="View mode">
+          <button class="is-active" data-view="tabs" type="button">탭 보기</button>
+          <button data-view="compare" type="button">한·중 비교</button>
+        </div>
+
+        <div data-prompts="part2" class="prompts"></div>
+
+        <h3 class="subsection__title">Step 1 클리닝 체크리스트</h3>
+        <ul class="checklist">
+          <li>중복된 응답자 ID 1건을 찾았다 <em>(힌트: R027)</em></li>
+          <li>교육일자가 비어 있는 행을 찾았다</li>
+          <li>희망 주제가 비어 있는 행 3건을 찾았다</li>
+          <li>난이도 컬럼에서 범위(1–5)를 벗어난 값을 찾았다</li>
+          <li>AI가 결함을 임의로 "대체"하지 않고 <em>표시만</em> 하도록 프롬프트를 다듬었다</li>
+        </ul>
+
+        <h3 class="subsection__title">Step 2 교차 검증 체크리스트</h3>
+        <ul class="checklist">
+          <li>DeepSeek 결과와 Qwen 결과를 같은 질문으로 비교했다</li>
+          <li>엑셀의 <strong>AVERAGE · COUNTBLANK</strong> 수식으로 핵심 수치를 역검산했다</li>
+          <li>AI 결과와 엑셀 수치가 어긋나는 지점을 문서화했다</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== PART 3 ========== -->
+    <section id="part3" class="section section--alt">
+      <div class="section__inner">
+        <p class="section__eyebrow">Part 3 · 40min</p>
+        <h2 class="section__title">
+          AI 리서치
+          <span class="section__title-zh">AI 调研</span>
+        </h2>
+        <p class="section__lead">
+          "한 번 묻고 끝"이 아닌, <strong>계획 → 검색 → 종합</strong>의 순서로
+          내·외부 자료를 찾는 방법을 연습합니다.
+        </p>
+
+        <h3 class="subsection__title">고급 검색 연산자 · 6종</h3>
+        <div class="operators">
+          <div>
+            <code>"..."</code>
+            <p>정확히 그 구문이 포함된 결과만</p>
+            <small>"executive AI training"</small>
+          </div>
+          <div>
+            <code>site:</code>
+            <p>특정 도메인 안에서만 검색</p>
+            <small>site:hbr.org</small>
+          </div>
+          <div>
+            <code>-site:</code>
+            <p>특정 도메인·단어를 제외</p>
+            <small>ai -site:medium.com</small>
+          </div>
+          <div>
+            <code>filetype:</code>
+            <p>파일 유형 한정</p>
+            <small>filetype:pdf</small>
+          </div>
+          <div>
+            <code>after:</code>
+            <p>특정 날짜 이후 발표물만</p>
+            <small>after:2025-01</small>
+          </div>
+          <div>
+            <code>before:</code>
+            <p>특정 날짜 이전 발표물만</p>
+            <small>before:2026-04</small>
+          </div>
+        </div>
+
+        <h3 class="subsection__title">실습 프롬프트 · #5 – #7</h3>
+
+        <div class="view-toggle" role="group" aria-label="View mode">
+          <button class="is-active" data-view="tabs" type="button">탭 보기</button>
+          <button data-view="compare" type="button">한·중 비교</button>
+        </div>
+
+        <div data-prompts="part3" class="prompts"></div>
+
+        <h3 class="subsection__title">출처 검증 체크리스트</h3>
+        <ul class="checklist">
+          <li>인용된 자료의 URL을 직접 열어 확인했다</li>
+          <li>발행 주체가 1차 출처인가, 인용의 인용인가를 구분했다</li>
+          <li>발행 시점이 주제의 유효 기간 안에 들어온다</li>
+          <li>숫자가 원문과 일치한다 <em>(AI가 반올림·재해석하지 않았다)</em></li>
+          <li>반대 사례 또는 실패 사례를 함께 확보했다</li>
+          <li>확인 불가한 내용은 <em>"확인 필요"</em>로 분류해 남겨두었다</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== PART 4 ========== -->
+    <section id="part4" class="section">
+      <div class="section__inner">
+        <p class="section__eyebrow">Part 4 · 30min</p>
+        <h2 class="section__title">
+          PPT 제작 · Kimi
+          <span class="section__title-zh">幻灯片制作 · Kimi</span>
+        </h2>
+        <p class="section__lead">
+          중국 내부망에서 안정적으로 쓸 수 있는 Kimi(K2.6)로 1차 슬라이드 초안을
+          생성하고, 사람이 구조 · 톤 · 근거를 손으로 마감하는 흐름을 연습합니다.
+        </p>
+
+        <h3 class="subsection__title">Kimi 워크플로우</h3>
+        <ol class="flow">
+          <li>
+            <strong>1. 자료 투입</strong>
+            <p>분석 결과·리서치 요약을 하나의 텍스트로 정리해 업로드합니다.</p>
+          </li>
+          <li>
+            <strong>2. 기획안 생성</strong>
+            <p>슬라이드 수·청중·톤을 명시하고 #8 프롬프트로 아웃라인을 뽑습니다.</p>
+          </li>
+          <li>
+            <strong>3. 검토 · 재지시</strong>
+            <p>흐름이 약한 슬라이드에만 부분 재생성을 요청합니다.</p>
+          </li>
+          <li>
+            <strong>4. 사람이 마감</strong>
+            <p>수치·인용·카피는 본인 책임으로 최종 확인·교체합니다.</p>
+          </li>
+        </ol>
+
+        <h3 class="subsection__title">피라미드 구조 · 임원 보고 3원칙</h3>
+        <ul class="checklist">
+          <li>결론을 <em>두 번째 슬라이드</em>에 먼저 제시한다 (표지 다음)</li>
+          <li>근거는 <em>3개 이내</em>로 압축 — 4개 이상이면 재그룹핑</li>
+          <li>1슬라이드 1메시지 · 숫자/차트 우선, 긴 텍스트 지양</li>
+          <li>마지막 슬라이드는 <em>액션 아이템</em>으로 마무리한다</li>
+        </ul>
+
+        <h3 class="subsection__title">실습 프롬프트 · #8</h3>
+
+        <div class="view-toggle" role="group" aria-label="View mode">
+          <button class="is-active" data-view="tabs" type="button">탭 보기</button>
+          <button data-view="compare" type="button">한·중 비교</button>
+        </div>
+
+        <div data-prompts="part4" class="prompts"></div>
+
+        <div class="callout">
+          <h4>생성이 실패하거나 결과가 약할 때</h4>
+          <ul>
+            <li>주제·청중·제약을 한 줄로 압축한 뒤 다시 지시합니다.</li>
+            <li>"이 슬라이드는 왜 이 순서에 있는가?"를 Kimi에게 되묻습니다.</li>
+            <li>핵심 메시지 3개를 사람이 먼저 정하고, 그 안에서만 재생성을 요청합니다.</li>
+            <li>수치·고유명사는 별도 표로 분리해 AI가 만지지 못하게 합니다.</li>
+            <li>3분 이상 응답이 없으면 <strong>새 채팅</strong>으로 다시 시도합니다.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CLOSING — 핵심 요약 & 활용 시나리오 ========== -->
+    <section id="closing" class="section section--alt">
+      <div class="section__inner">
+        <p class="section__eyebrow">Closing · 20min</p>
+        <h2 class="section__title">
+          오늘 배운 것을 내일부터
+          <span class="section__title-zh">从明天起就能用上的三句话</span>
+        </h2>
+        <p class="section__lead">
+          세 가지 습관과 여섯 가지 적용 장면 — 오늘의 실습을 본인 업무로
+          옮길 때 가장 자주 쓰게 될 조합입니다.
+        </p>
+
+        <h3 class="subsection__title">핵심 요약 · 3가지</h3>
+        <div class="summary-keys">
+          <article>
+            <span class="summary-keys__no">Key 01</span>
+            <h3>프롬프트 4원칙</h3>
+            <p>역할 · 맥락 · 단계 · 출력 형식을 한 프롬프트 안에 넣는다. 이것만 지켜도 결과 품질이 바뀐다.</p>
+          </article>
+          <article>
+            <span class="summary-keys__no">Key 02</span>
+            <h3>검색 연산자</h3>
+            <p>site: · filetype: · after: — 세 개만 익혀도 리서치 속도와 정확도가 달라진다.</p>
+          </article>
+          <article>
+            <span class="summary-keys__no">Key 03</span>
+            <h3>계획부터 AI로</h3>
+            <p>바로 답을 얻으려 하지 말고, "무엇을 찾을지"부터 AI에 설계시킨다. 체이닝이 결과를 단단하게 만든다.</p>
+          </article>
+        </div>
+
+        <h3 class="subsection__title">추천 활용 시나리오 · 6종</h3>
+        <p class="subsection__lead">
+          다음 여섯 장면은 교육 직후부터 바로 쓰기 좋은 조합입니다.
+          각 시나리오에서 어떤 Part의 프롬프트를 응용할지 같이 떠올려 보세요.
+        </p>
+
+        <div class="scenarios">
+          <article>
+            <span class="scenarios__no">01</span>
+            <h3>시장·동향 브리핑<span>市场动向速报</span></h3>
+            <p>주간 AI·반도체 트렌드를 5분짜리 내부 브리핑으로 — Part 3 검색식 + Part 4 피라미드 구조.</p>
+          </article>
+          <article>
+            <span class="scenarios__no">02</span>
+            <h3>회의 안건 준비<span>会议议题准备</span></h3>
+            <p>이전 회의록·메모·메일을 정리해 다음 회의 안건 1장 요약 — Part 1 4원칙 + Part 2 정성 분류.</p>
+          </article>
+          <article>
+            <span class="scenarios__no">03</span>
+            <h3>데이터 분석 요약<span>数据分析摘要</span></h3>
+            <p>사내 설문·로그 CSV의 구조 파악·기술통계·세그먼트 — Part 2 프롬프트 그대로 적용.</p>
+          </article>
+          <article>
+            <span class="scenarios__no">04</span>
+            <h3>보고서 · 이메일 초안<span>报告·邮件初稿</span></h3>
+            <p>임원 이메일은 3문장, 보고서는 2장 초안까지 — Part 1 맥락 제공 + Part 4 피라미드.</p>
+          </article>
+          <article>
+            <span class="scenarios__no">05</span>
+            <h3>규제 · 정책 모니터링<span>法规·政策监控</span></h3>
+            <p>중·한 규제 변경을 분기 단위로 — Part 3 site:· after:으로 공식 출처만 추려낸다.</p>
+          </article>
+          <article>
+            <span class="scenarios__no">06</span>
+            <h3>팀 협업 문서화<span>团队协作文档化</span></h3>
+            <p>산재된 슬랙·메일·문서를 위키 한 장으로 — Part 2 카테고리 분류 + Part 1 마크다운.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DATA ========== -->
+    <section id="data" class="section">
+      <div class="section__inner">
+        <p class="section__eyebrow">Data</p>
+        <h2 class="section__title">
+          실습 데이터 다운로드
+          <span class="section__title-zh">实习数据下载</span>
+        </h2>
+        <p class="section__lead">
+          본인의 언어 환경에 맞는 파일을 내려받아 사용하세요.
+          두 파일의 정량 지표와 의도된 결함은 동일하며, 차이는 자유 텍스트의 언어 비율뿐입니다.
+        </p>
+
+        <div class="downloads">
+          <a
+            class="dl-card"
+            href="assets/data/SK_China_AI_Training_Satisfaction_Survey_KR.csv"
+            download
+          >
+            <div class="dl-card__tag">한국어 버전</div>
+            <div class="dl-card__title">SK_China_AI_Training_Satisfaction_Survey_KR.csv</div>
+            <div class="dl-card__meta">
+              <span>50행 × 12열</span>
+              <span>UTF-8 BOM</span>
+              <span>KR 35 · CN 15</span>
+            </div>
+            <div class="dl-card__cta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              <span>Download</span>
+            </div>
+          </a>
+
+          <a
+            class="dl-card"
+            href="assets/data/SK_China_AI_Training_Satisfaction_Survey_CN.csv"
+            download
+          >
+            <div class="dl-card__tag">中文版本</div>
+            <div class="dl-card__title">SK_China_AI_Training_Satisfaction_Survey_CN.csv</div>
+            <div class="dl-card__meta">
+              <span>50 行 × 12 列</span>
+              <span>UTF-8 BOM</span>
+              <span>CN 35 · KR 15</span>
+            </div>
+            <div class="dl-card__cta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              <span>下载</span>
+            </div>
+          </a>
+        </div>
+
+        <p class="callout callout--muted">
+          응답자 50명 중 1명의 ID는 중복이며, 1명은 교육일자가 비어 있고,
+          3명은 희망 주제가 비어 있으며, 1건은 척도 범위를 벗어납니다.
+          의도된 결함이니 먼저 발견한 뒤 어떻게 처리할지 결정하세요.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="section section--alt">
+      <div class="section__inner">
+        <p class="section__eyebrow">FAQ</p>
+        <h2 class="section__title">
+          자주 나오는 질문
+          <span class="section__title-zh">常见问题</span>
+        </h2>
+
+        <div class="faq">
+          <details>
+            <summary>AI 답변을 어디까지 믿어야 하나요?</summary>
+            <p>
+              <em>재현 가능한 사실</em>은 믿고, <em>해석·추천·예측</em>은 근거가 제시됐을 때만
+              받아들입니다. 숫자·고유명사·인용은 반드시 원문에서 재확인하세요.
+            </p>
+          </details>
+
+          <details>
+            <summary>내부 데이터를 AI에 넣어도 되나요?</summary>
+            <p>
+              회사 보안 정책을 우선 따릅니다. 고객사·인사·재무 데이터는 익명화·마스킹 후에만
+              사용하고, 실명을 포함한 문서는 내부 승인된 도구에 한정해 사용하세요.
+            </p>
+          </details>
+
+          <details>
+            <summary>한국어와 중국어 중 어느 쪽으로 물어야 하나요?</summary>
+            <p>
+              최종 결과물의 언어로 물어야 번역 손실이 적습니다. 다만 전문 용어는 영어로
+              병기하면 정확도가 올라갑니다. 한·중 혼재 텍스트는 <em>의미 기반</em>으로
+              분류해 달라고 명시해야 언어별로 쪼개지지 않습니다.
+            </p>
+          </details>
+
+          <details>
+            <summary>Kimi 외의 도구를 써도 되나요?</summary>
+            <p>
+              가능합니다. 다만 중국 내부망 안정성과 한·중 문서 품질을 기준으로 선택하세요.
+              오늘 실습은 분석·리서치는 <em>DeepSeek + Qwen</em>, PPT는 <em>Kimi K2.6</em>
+              기준으로 진행합니다.
+            </p>
+          </details>
+
+          <details>
+            <summary>DeepThink(R1) 모드는 언제 켜나요?</summary>
+            <p>
+              <em>ON</em> — 복잡한 분석, 다단계 추론, 전략 설계.
+              <em>OFF</em> — 단순 번역, 형식 변환, 짧은 질문.
+              기본값은 OFF로 두고, 결과가 얕다고 느껴질 때만 켭니다.
+            </p>
+          </details>
+
+          <details>
+            <summary>실습 중 AI가 다른 숫자를 말하면?</summary>
+            <p>
+              Excel·Python 등으로 본인이 직접 검산하는 것이 원칙입니다.
+              오늘 평균 4.12 · 4.34 등 주요 수치는 강사와 교차 확인해 드립니다.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__mark">SK</span>
+        <span>China · AI Training</span>
+      </div>
+      <p class="footer__tag">Designed for Beijing · 2026</p>
+      <p class="footer__small">
+        본 대시보드의 데이터는 교육용 가상 샘플입니다. ©
+        2026 Aram Kim.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/data/prompts.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
