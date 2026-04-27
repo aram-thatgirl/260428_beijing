@@ -53,10 +53,10 @@
         </p>
 
         <dl class="hero__meta">
-          <div><dt>일시</dt><dd>2026-04-28 · 09:30–12:30</dd></div>
+          <div><dt>일시</dt><dd>2026-04-28 · 13:30-16:45</dd></div>
           <div><dt>장소</dt><dd>SK China 베이징 오피스</dd></div>
           <div><dt>강사</dt><dd>Aram Kim (김아람 이사)</dd></div>
-          <div><dt>구성</dt><dd>Part 1–4 · 실습 프롬프트 12개</dd></div>
+          <div><dt>구성</dt><dd>Part 1–4 · 실습 프롬프트 13개</dd></div>
         </dl>
       </div>
     </section>
@@ -147,10 +147,11 @@
           </article>
         </div>
 
-        <h3 class="subsection__title">마크다운 빠른 참조 · 실습 프롬프트</h3>
+        <h3 class="subsection__title">마크다운 + 4원칙 + 할루시네이션 제어</h3>
         <p class="subsection__lead">
-          카드 안의 <strong>한국어 / 中文</strong> 탭을 눌러 원하는 언어를 복사하세요.
-          상단의 "한·중 비교" 버튼으로 두 언어를 나란히 볼 수도 있습니다.
+          마크다운 3종 · 4원칙 적용 · 할루시네이션 제어 예시까지 다섯 개의 카드를
+          순서대로 따라가며 익힙니다. 카드 안의 <strong>한국어 / 中文</strong> 탭을 눌러
+          원하는 언어를 복사하고, 상단 "한·중 비교" 버튼으로 두 언어를 나란히 볼 수도 있습니다.
         </p>
 
         <div class="view-toggle" role="group" aria-label="View mode">
@@ -485,11 +486,7 @@
         </p>
 
         <div class="downloads">
-          <a
-            class="dl-card"
-            href="assets/data/SK_China_AI_Training_Satisfaction_Survey_KR.csv"
-            download
-          >
+          <button class="dl-card" type="button" data-csv="KR">
             <div class="dl-card__tag">한국어 버전</div>
             <div class="dl-card__title">SK_China_AI_Training_Satisfaction_Survey_KR.csv</div>
             <div class="dl-card__meta">
@@ -506,13 +503,9 @@
               </svg>
               <span>Download</span>
             </div>
-          </a>
+          </button>
 
-          <a
-            class="dl-card"
-            href="assets/data/SK_China_AI_Training_Satisfaction_Survey_CN.csv"
-            download
-          >
+          <button class="dl-card" type="button" data-csv="CN">
             <div class="dl-card__tag">中文版本</div>
             <div class="dl-card__title">SK_China_AI_Training_Satisfaction_Survey_CN.csv</div>
             <div class="dl-card__meta">
@@ -529,7 +522,7 @@
               </svg>
               <span>下载</span>
             </div>
-          </a>
+          </button>
         </div>
 
         <p class="callout callout--muted">
@@ -606,6 +599,28 @@
 
   </main>
 
+  <!-- ========== Qianwen quick-launch FAB (fixed bottom-right) ========== -->
+  <a
+    class="fab-qwen"
+    href="https://www.qianwen.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="千问 (Qianwen) 새 탭에서 열기"
+    title="千问 (Qianwen) 열기"
+  >
+    <span class="fab-qwen__mark" aria-hidden="true">千</span>
+    <span class="fab-qwen__label">
+      千问 / Qianwen
+      <span class="fab-qwen__sub">www.qianwen.com</span>
+    </span>
+    <svg class="fab-qwen__icon" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M7 17L17 7"/>
+      <path d="M8 7h9v9"/>
+    </svg>
+  </a>
+
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="footer__inner">
@@ -621,6 +636,7 @@
     </div>
   </footer>
 
+  <script src="assets/data/csv-data.js"></script>
   <script src="assets/data/prompts.js"></script>
   <script src="assets/app.js"></script>
 </body>

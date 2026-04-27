@@ -174,6 +174,46 @@
     li.classList.toggle('is-checked');
   }
 
+  /* ---------- force CSV download (works in file://, preview, hosted) ---------- */
+  function triggerBlobDownload(content, filename) {
+    // UTF-8 BOM so Excel opens Korean/Chinese correctly
+    const BOM = '\uFEFF';
+    const blob = new Blob([BOM + content], { type: 'text/csv;charset=utf-8' });
+    const url  = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.rel = 'noopener';
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+  }
+
+  async function onDownloadClick(e) {
+    const btn = e.target.closest('[data-csv]');
+    if (!btn) return;
+    e.preventDefault();
+
+    const key = btn.getAttribute('data-csv');       // 'KR' or 'CN'
+    const data = (window.CSV_DATA || {})[key];
+    if (!data) return;
+
+    const cta = btn.querySelector('.dl-card__cta span');
+    const originalLabel = cta ? cta.textContent : null;
+    if (cta) cta.textContent = '…';
+
+    try {
+      triggerBlobDownload(data.content, data.filename);
+      if (cta) cta.textContent = 'Saved';
+      setTimeout(() => { if (cta && originalLabel) cta.textContent = originalLabel; }, 1600);
+    } catch (err) {
+      if (cta && originalLabel) cta.textContent = originalLabel;
+      console.error('Download failed:', err);
+    }
+  }
+
   /* ---------- scrollspy ---------- */
   function setupScrollSpy() {
     const links = document.querySelectorAll('.nav__list a[href^="#"]');
@@ -204,6 +244,7 @@
       onCopyClick(e);
       onViewToggle(e);
       onChecklistClick(e);
+      onDownloadClick(e);
     });
     setupScrollSpy();
   });
