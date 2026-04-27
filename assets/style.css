@@ -972,12 +972,18 @@ button.dl-card { font-family: inherit; }
 }
 
 /* =========================================================
-   FAB · Qianwen quick launch
+   FAB cluster · Kimi + Qianwen quick launch
    ========================================================= */
-.fab-qwen {
+.fab-cluster {
   position: fixed;
   right: 22px; bottom: 22px;
   z-index: 60;
+  display: flex; flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.fab {
   display: inline-flex; align-items: center; gap: 12px;
   padding: 10px 18px 10px 10px;
   background: var(--bg-raise);
@@ -995,59 +1001,77 @@ button.dl-card { font-family: inherit; }
   transition: transform .2s ease, box-shadow .2s ease,
               border-color .2s ease, background .2s ease;
 }
-.fab-qwen:hover {
+.fab:hover {
   transform: translateY(-1px);
-  border-color: var(--accent-strong);
-  border-bottom-color: var(--accent-strong);
-  box-shadow:
-    0 18px 36px -16px rgba(94, 55, 20, 0.34),
-    0 2px 0 rgba(17, 20, 24, 0.05);
   background: var(--bg-raise);
+  box-shadow:
+    0 18px 36px -16px rgba(17, 20, 24, 0.32),
+    0 2px 0 rgba(17, 20, 24, 0.05);
 }
-.fab-qwen:focus-visible {
+.fab:focus-visible {
   outline: 2px solid var(--accent-strong); outline-offset: 3px;
 }
-.fab-qwen__mark {
+
+.fab__mark {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 30px; height: 30px;
-  flex: 0 0 30px;
+  width: 30px; height: 30px; flex: 0 0 30px;
   font-family: 'Noto Serif KR', 'Fraunces', serif;
   font-size: 17px; font-weight: 600;
   color: var(--bg-raise);
-  background: linear-gradient(160deg, var(--accent-strong) 0%, #3d2210 100%);
   border-radius: 50%;
   letter-spacing: 0;
 }
-.fab-qwen__label {
+.fab__label {
   display: inline-flex; flex-direction: column;
   line-height: 1.15;
   color: var(--ink);
 }
-.fab-qwen__sub {
+.fab__sub {
   font-family: var(--font-mono);
   font-size: 10px; font-weight: 400;
   color: var(--subtle);
   letter-spacing: 0.02em;
   margin-top: 2px;
 }
-.fab-qwen__icon {
+.fab__icon {
   width: 14px; height: 14px;
   color: var(--muted);
   transition: color .2s ease, transform .2s ease;
 }
-.fab-qwen:hover .fab-qwen__icon {
-  color: var(--accent-strong);
-  transform: translate(1px, -1px);
+.fab:hover .fab__icon { transform: translate(1px, -1px); }
+
+/* ----- Qianwen variant — 번트 시에나 ----- */
+.fab--qwen .fab__mark {
+  background: linear-gradient(160deg, var(--accent-strong) 0%, #3d2210 100%);
 }
+.fab--qwen:hover {
+  border-color: var(--accent-strong);
+  border-bottom-color: var(--accent-strong);
+}
+.fab--qwen:hover .fab__icon { color: var(--accent-strong); }
+
+/* ----- Kimi variant — 잉크 네이비 ----- */
+.fab--kimi .fab__mark {
+  background: linear-gradient(160deg, var(--navy) 0%, #0d1330 100%);
+  font-family: 'Fraunces', 'Noto Serif KR', serif;
+  font-style: italic;
+  font-size: 16px;
+}
+.fab--kimi:hover {
+  border-color: var(--navy);
+  border-bottom-color: var(--navy);
+}
+.fab--kimi:hover .fab__icon { color: var(--navy); }
+
 @media (max-width: 520px) {
-  .fab-qwen {
-    right: 14px; bottom: 14px;
+  .fab-cluster { right: 14px; bottom: 14px; gap: 8px; }
+  .fab {
     padding: 8px 14px 8px 8px;
     gap: 10px;
+    font-size: 12px;
   }
-  .fab-qwen__mark { width: 26px; height: 26px; flex-basis: 26px; font-size: 15px; }
-  .fab-qwen__sub { display: none; }
-  .fab-qwen__label { font-size: 12px; }
+  .fab__mark { width: 26px; height: 26px; flex-basis: 26px; font-size: 15px; }
+  .fab__sub { display: none; }
 }
 
 /* =========================================================
@@ -1055,7 +1079,7 @@ button.dl-card { font-family: inherit; }
    ========================================================= */
 @media print {
   .nav, .view-toggle, .prompt__copy, .footer, .hero__eyebrow,
-  .fab-qwen { display: none; }
+  .fab-cluster { display: none; }
   body { background: #fff; color: #000; }
   .section, .hero { padding: 24px 0; background: #fff; border-top: 1px solid #ccc; }
   .section--alt { background: #fff; }
